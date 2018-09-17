@@ -1,7 +1,7 @@
 {
   "name": "melody-jss",
   "version": "1.0.0",
-  "description": "melody-jss React component",
+  "description": "melody-jss Melody component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -19,20 +19,28 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {},
-  "peerDependencies": {
-    "react": "16.x"
+  "dependencies": {
+    "jss": "^9.8.7",
+    "jss-preset-default": "^4.5.0",
+    "melody-hoc": "^1.1.0"
   },
   "devDependencies": {
     "nwb": "0.23.x",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1"
+    "melody-component": "^1.0.0",
+    "melody-hoc": "^1.0.0",
+    "melody-idom": "^1.0.0",
+    "melody-loader": "^1.0.0",
+    "melody-parser": "^1.0.0",
+    "melody-plugin-idom": "^1.0.0",
+    "melody-traverse": "^1.0.0",
+    "melody-types": "^1.0.0",
+    "redux": "^4.0.0"
   },
   "author": "",
   "homepage": "",
   "license": "MIT",
   "repository": "",
   "keywords": [
-    "react-component"
+    "melody-component"
   ]
 }

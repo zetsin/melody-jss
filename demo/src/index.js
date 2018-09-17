@@ -1,15 +1,16 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import { render } from 'melody-component';
+import { setTheme } from '../../src'
 
-import Example from '../../src'
+import home from './home';
 
-class Demo extends Component {
-  render() {
-    return <div>
-      <h1>melody-jss Demo</h1>
-      <Example/>
-    </div>
+setTheme({
+  color: 'green',
+  spacing: {
+    unit: 8
   }
-}
+})
 
-render(<Demo/>, document.querySelector('#demo'))
+const documentRoot = document.querySelector('#demo');
+render(documentRoot, home, {
+    message: 'Welcome to Melody!'
+});
