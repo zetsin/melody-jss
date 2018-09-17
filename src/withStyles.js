@@ -25,7 +25,7 @@ export default function withStyle(stylesOrCreator, options = {}) {
   return ChildComponent => {
     const StylesInstance = new Styles(stylesOrCreator, {
       ...options,
-      classNamePrefix: process.env.NODE_ENV === 'production' ? undefined : ChildComponent.prototype.displayName
+      classNamePrefix: process.env.NODE_ENV === 'production' ? undefined : `${ChildComponent.prototype.displayName}--`
     })
     return compose(
       withStore(() => createStore(stateReducer, StylesInstance.getStaticSheet().classes), 'classes'),
