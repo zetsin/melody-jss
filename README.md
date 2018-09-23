@@ -1,16 +1,44 @@
 # melody-jss
+[jss](https://github.com/cssinjs/jss) integration for Melody
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+## Install
+```
+npm install --save melody-jss
+```
+```
+yarn add melody-jss
+```
 
-Describe melody-jss here.
+## Usage
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+### Basic
+```javascript
+import withStyles from 'melody-jss'
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+import { compose } from 'melody-hoc'
+import { createComponent } from 'melody-component'
+import template from './index.twig'
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+const styles = {
+  test1: {
+    color: 'red',
+    fontSize: 25
+  },
+  test2: {
+    color: 'yellow',
+    fontSize: 25
+  },
+}
+
+export default compose(
+  withStyles(styles)
+)(createComponent(template))
+```
+
+```twig
+<div>
+    <h1 class="{{classes.test1}}">
+        {{ message }}
+    </h1>
+</div>
+```
