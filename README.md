@@ -42,3 +42,46 @@ export default compose(
     </h1>
 </div>
 ```
+
+### Theme
+```javascript
+import { render } from 'melody-component';
+import { setTheme } from '../../src'
+
+import home from './home';
+
+setTheme({
+  color: 'green',
+  spacing: {
+    unit: 8
+  }
+})
+
+const documentRoot = document.querySelector('#demo');
+render(documentRoot, home, {
+    message: 'Welcome to Melody!'
+});
+```
+```
+import withStyles from '../../../src'
+
+import { compose } from 'melody-hoc'
+import template from './index.twig';
+
+const styles = theme => ({
+  test1: {
+    color: [theme.color, '!important'],
+    fontSize: component => component.state.count * 10 * theme.spacing.unit
+  },
+  test2: {
+    color: 'blue'
+  },
+})
+
+const component = createComponent(template, stateReducer);
+
+export default compose(
+  withStyles(styles),
+)(component)
+
+```
