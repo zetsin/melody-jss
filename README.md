@@ -62,7 +62,7 @@ render(documentRoot, home, {
     message: 'Welcome to Melody!'
 });
 ```
-```
+```javascript
 import withStyles from '../../../src'
 
 import { compose } from 'melody-hoc'
